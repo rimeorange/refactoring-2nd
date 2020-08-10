@@ -1,5 +1,10 @@
 import INVOICE from "../invoices.json";
-import PLAYS from "../plays.json";
+import PLAY from "../plays.json";
+
+
+function playFor(aPerformance) {
+    return play[aPerformance.playID];
+}
 
 function statement(invoice, plays) {
     let totalAmount = 0;
@@ -12,7 +17,7 @@ function statement(invoice, plays) {
     }).format;
 
     for (let perf of invoice.performances) {
-        const play = plays[perf.playID]; // object {name, type}
+        const play = playFor(perf); // object {name, type}
 
         let thisAmount = amountFor(perf, play);
 
@@ -55,4 +60,5 @@ function amountFor(aPerformance, play) {
 
 }
 
-console.log(statement(INVOICE[0], PLAYS));
+
+console.log(statement(INVOICE[0], PLAY));
