@@ -7,14 +7,15 @@ function playFor(aPerformance) {
 }
 
 function statement(invoice, plays) {
+    return renderPlainText(invoice, plays);
+}
 
+function renderPlainText(invoice, plays) {
     let result = `청구 내역(고객명: ${invoice.customer})\n`;
 
     for (let perf of invoice.performances) {
-
         // 청구 내역을 출력한다.
         result += `${playFor(perf).name}: ${usd(amountFor(perf))} (${perf.audience}석)\n`;
-        ;
     }
 
     result += `총액: ${usd(totalAmount())}\n`;
@@ -39,9 +40,11 @@ function statement(invoice, plays) {
 
     function usd(aNumber) {
         return new Intl.NumberFormat("en-US",
-            {style: "currency",
-            currency:"USD",
-            minimumFractionDigits: 2}).format(aNumber / 100);
+            {
+                style: "currency",
+                currency: "USD",
+                minimumFractionDigits: 2
+            }).format(aNumber / 100);
     }
 
     function volumeCreditsFor(aPerformance) {
@@ -82,7 +85,6 @@ function statement(invoice, plays) {
         return result;
 
     }
-
 }
 
 
