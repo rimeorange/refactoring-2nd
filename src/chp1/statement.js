@@ -37,7 +37,7 @@ import createStatementData from './createStatementData.js'
           result += `총액: ${usd(data.totalAmount)}\n`;
           result += `적립 포인트: ${data.totalVolumeCredits}점\n`;
           return result;
-        }
+
     }
 
     function usd(aNumber) {
@@ -45,8 +45,8 @@ import createStatementData from './createStatementData.js'
         style: "currency",
         currency: "USD",
         minimumFractionDigits: 2
-      }).format(aNumber / 100);
-
+        } ).format(aNumber / 100);
+        }
 
       document.getElementById("app2").innerText = statement(INVOICE[0], PLAYS);
       document.getElementById("app").innerHTML = htmlStatement(INVOICE[0], PLAYS);
