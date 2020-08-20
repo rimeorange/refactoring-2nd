@@ -48,5 +48,5 @@ import createStatementData from './createStatementData.js'
         } ).format(aNumber / 100);
         }
 
-      document.getElementById("app2").innerText = statement(INVOICE[0], PLAYS);
-      document.getElementById("app").innerHTML = htmlStatement(INVOICE[0], PLAYS);
+      //document.getElementById("app2").innerText = statement(INVOICE[0], PLAYS);
+      //document.getElementById("app").innerHTML = htmlStatement(INVOICE[0], PLAYS);
