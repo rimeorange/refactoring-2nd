@@ -1,13 +1,10 @@
 
 function printOwing(invoice) {
-    let outstatnding = 0;
 
     printBanner();
 
     // 미해결 채무(outstanding)를 계산한다.
-    for (const o of invoice.orders) {
-        outstatnding += o.amount;
-    }
+    const outstatnding = calculateOutstanding(invoice);
 
     // 마감일(dueDate)을 기록한다.
     recordDueDate(invoice);
@@ -15,6 +12,14 @@ function printOwing(invoice) {
     // 세부 사항을 출력한다.
     printDetails(invoice, outstatnding);
 
+}
+
+function calculateOutstanding(invoice) {
+    let result = 0;
+    for (const o of invoice.orders) {
+        outstatnding += o.amount;
+    }
+    return result;
 }
 
 function recordDueDate(invoice) {
