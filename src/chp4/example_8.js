@@ -25,6 +25,7 @@ const operatingPlan = {temperatureFloor : 50, temperatureCeiling: 55};
 
 alerts = readingsOutsideRange(station,
     operatingPlan.temperatureFloor,
-    operatingPlan.temperatureCeiling);
+    operatingPlan.temperatureCeiling,
+    null);
 
 console.log(alerts)
