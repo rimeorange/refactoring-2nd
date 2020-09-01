@@ -8,9 +8,9 @@ const station = { name: "ZB1",
     ]
 }
 
-function readingsOutsideRange(station, min, max, range) {
+function readingsOutsideRange(station, min, range) {
     return station.readings
-        .filter(r => r.temp < min || r.temp > max);
+        .filter(r => r.temp < min || r.temp > range.max);
 }
 
 class NumberRange {
@@ -28,7 +28,6 @@ const range = new NumberRange(operatingPlan.temperatureFloor,
 
 alerts = readingsOutsideRange(station,
     operatingPlan.temperatureFloor,
-    operatingPlan.temperatureCeiling,
-    null);
+    range);
 
 console.log(alerts)
