@@ -23,6 +23,9 @@ class NumberRange {
 
 const operatingPlan = {temperatureFloor : 50, temperatureCeiling: 55};
 
+const range = new NumberRange(operatingPlan.temperatureFloor,
+                            operatingPlan.temperatureCeiling);
+
 alerts = readingsOutsideRange(station,
     operatingPlan.temperatureFloor,
     operatingPlan.temperatureCeiling,
