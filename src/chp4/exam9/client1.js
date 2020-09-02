@@ -1,2 +1,3 @@
-const reading = aquireReading();
-const baseCharge = baseRate(aReading.menth, aReading.year) * aReading.quantity;
+const rawReading = aquireReading();
+const aReading = new Reading(rawReading);
+const baseCharge = aReading.baseCharge;
