@@ -1,3 +1,7 @@
-const aReading = aquireReading();
-const base = (baseRate(aReading.menth, aReading.year) * aReading.quantity);
-const taxableCharge = Math.max(0, base - taxThreshold(aReading.year));
+const rawReading = aquireReading();
+const aReading = new Reading(rawReading);
+const taxableCharge = taxableChargeFn(aReading);
+
+function taxableChargeFn(aReading) {
+    return Math.max(0, aReading.baseCharge - taxThreshold(aReading.year));
+}
