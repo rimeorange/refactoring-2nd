@@ -1,7 +1,5 @@
 const rawReading = aquireReading();
 const aReading = new Reading(rawReading);
-const taxableCharge = taxableChargeFn(aReading);
+const taxableCharge = aReading.taxableCharge;
 
-function taxableChargeFn(aReading) {
-    return Math.max(0, aReading.baseCharge - taxThreshold(aReading.year));
-}
+
