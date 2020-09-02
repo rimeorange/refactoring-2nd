@@ -1,8 +1,6 @@
-const aReading = aquireReading();
-const baseChargeAmount = calulateBaseCharge(aReading);
+const rawReading = aquireReading();
+const aReading = enrichReading(rawReading);
+const baseChargeAmount = aReading.baseCharge;
 
-function calulateBaseCharge(aReading) {
-    return baseRate(aReading.month, aReading.year) * aReading.quantity;
-}
 
 
