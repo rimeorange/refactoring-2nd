@@ -7,11 +7,7 @@ class Person {
         return this._name;
     }
     get courses() {
-        return this._courses;
-    }
-
-    set courses(asList) {
-        this._courses = asList;
+        return this._courses.slice();
     }
 
     addCourse(aCourse) {
