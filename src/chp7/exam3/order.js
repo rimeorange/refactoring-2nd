@@ -4,7 +4,7 @@ class Order {
     }
 
 
-    get priority() {
+    get priorityString() {
         return this._priority.toString();
     }
 
