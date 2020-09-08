@@ -18,7 +18,7 @@ class Person {
         this._courses.push(acourse);
     }
 
-    removeCourse(aCourse, fnIfAbsent = () => {thrownew RangeError();}) {
+    removeCourse(aCourse, fnIfAbsent = () => {throw new RangeError();}) {
         const index = this._courses.indexOf(aCourse);
         if (index === -1) fnIfAbsent();
         else this._courses.splice(index, 1);
