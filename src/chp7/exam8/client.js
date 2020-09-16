@@ -1,1 +1,1 @@
-manager = aPerson.manager;
+manager = aPerson.department.manager;
